@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Revista</title>
+</head>
+<body>
+    <h1>HOLA A TODOS</h1>
+    <main>
+        <div id=”emailRegister”>
+         <input type=”email” placeholder=”email” id=”userEmail”
+          class=”textArea” maxlength=”40" size=”18" />
+         <input type=”password” placeholder=”password” maxlength=”10"
+          size=”18" id=”userPassword” class=”textArea” />
+        </div>
+        <div id=”buttonsRegister”>
+          <button id=”loginEmail”>LOGIN</button>
+          <button id=”signUpEmail”>SIGN UP</button>
+          <button id=”logOut”>LOG OUT</button>
+        </div>
+        </main>
+
+       <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.12.0/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyBfvV20K1vlElSTjI0i8e6wc5tgiXYHtMk",
+    authDomain: "revistacienciashoy.firebaseapp.com",
+    databaseURL: "https://revistacienciashoy.firebaseio.com",
+    projectId: "revistacienciashoy",
+    storageBucket: "revistacienciashoy.appspot.com",
+    messagingSenderId: "69878471982",
+    appId: "1:69878471982:web:3393e4864b1c65eea7aebf"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script>
+<script src="/main.js"></script>
+</body>
+</html></HTML>
