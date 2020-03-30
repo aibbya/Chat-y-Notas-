@@ -1,102 +1,96 @@
 console.log("Dios esta en todo");
 
+var userLog = {} ;
 
-/* // Acceder a servicio bbdd
-const data = firebase.database();
-// Obtener una referencia a la raíz de la base de datos
-let refToData = data.ref()
-// Obtener una console.log de todos los datos 
-dataRef.once('value', snapshot => {
-  console.log(snapshot.val());
-});
 
-let data = {
-  "Moscow": {
-    country: "Russia"
-  },
-  "Berlin": {
-    name: "Germany"
-  }
-}
-// Referenciamos al nodo principal
-let dataRef = database.ref('cities');
-// Pusheamos los datos al nodo
-let dataPush = dataRef.push(data);
-// Visualizamos los datos al nodo
-dataRef.once('value', snapshot => {
-  console.log(snapshot.val());
-}); */
-
-/* btnAcceder[i].addEventListener("click", function () {
-  //Aquí la función que se ejecutará cuando se dispare el evento
-  alert("conectando");
-  var provider = new firebase.auth.GoogleAuthProvider();;
+function googleSignin() {
+  var provider = new firebase.auth.GoogleAuthProvider();
   firebase.auth()
-    .signInWithPopup(provider)
-    .then(function (result) {
 
-      // The signed-in user info.
+    .signInWithPopup(provider).then(function (result) {
+      var token = result.credential.accessToken;
       var user = result.user;
 
-      console.log(user);
-      console.log(user.displayName);
-      console.log(user.email);
-      console.log(user.photoURL);
+      console.log(token)
+      console.log(user)
+      userLog= user;
+    }).catch(function (error) {
+      var errorCode = error.code;
+      var errorMessage = error.message;
 
-      $(".botonEntrar").hide();
-      $("#sign-out-button").show();
-      $("#btnMiCuenta").show();
-
-      alert("Bienvenido " + user.displayName)
-
-      //********* Perfil 
-      document.getElementById("nombrePerfil").innerHTML = user.displayName;
-      document.getElementById("emailPerfil").innerHTML = user.email;
-      $('#fotoPerfil').append("<img src='" + user.photoURL + "'/>");
-
-
+      console.log(error.code)
+      console.log(error.message)
     });
-});
- */
+}
+
+
+
+function googleSignout() {
+  firebase.auth().signOut()
+
+    .then(function () {
+      console.log('Signout Succesfull')
+    }, function (error) {
+      console.log('Signout Failed')
+    });
+}
+
 var txtNombre = document.getElementById("nombre");
 var txtMensaje = document.getElementById("mensaje");
 var btnEnviar = document.getElementById('btnEnviar');
 var chatUl = document.getElementById('chatUl');
 
 
-btnEnviar.addEventListener("click", function(){
-  var nombre = txtNombre.value;
-    var mensaje = txtMensaje.value;
-  var html = "<li><b>" + nombre + ":</b>" + mensaje + "</li>"
-  chatUl.innerHTML += html;
-
+btnEnviar.addEventListener("click", function () {
+  // var nombre = txtNombre.value;
+  var mensaje = txtMensaje.value
   firebase.database().ref('chat').push({
-    name: nombre,
+    name: userLog.displayName,
     message: mensaje
   });
-  firebase.database().ref('chat')
-  .on('value', function (snapshot){
-    console.log(snapshot.ref);
-    
-    var html ="";
-  snapshot.forEach(e => {
-    var elem = e.val;
-    var nombre = elem.name;
-    var mensaje = elem.message;
-    html += "<li><b>" + nombre + ":</b>" + mensaje + "</li>"
-  });
-    chatUl.innerHTML = html;
-  })
+
 });
 
-firebase.database().ref('chat')
-.on('value', function (snapshot){
-  var html ="";
-snapshot.forEach(e => {
-  var elem = e.val;
-  var nombre = elem.name;
-  var mensaje = elem.message;
-  html += "<li><b>" + nombre + ":</b>" + mensaje + "</li>"
-});
-  chatUl.innerHTML = html;
+$(window).on("load", function () {
+  firebase.database().ref('chat')
+    .on('value', function (snapshot) {
+      var html = "";
+      console.log(snapshot.val());
+      snapshot.forEach(e => {
+        // console.log(e.value);
+
+        var elem = e.val();
+        var nombre = elem.name;
+        console.log(elem);
+
+        var mensaje = elem.message;
+        html += "<li><b>" + nombre + ":</b>" + mensaje + "</li>"
+      });
+      chatUl.innerHTML = html;
+      
+    });
+
+    firebase.auth().onAuthStateChanged(function (user) {
+      
+        userLog = user;
+        
+      })
+        
+
 })
+
+console.log(userLog);
+
+/* 
+$(window).addEventListener("change", function () {
+  
+}
+
+)
+ */
+
+/* firebase.auth().onAuthStateChanged(function (user) {
+	if(user) {
+    console.log("estoy logueado")
+    console.log(user.displayName);
+  } */
