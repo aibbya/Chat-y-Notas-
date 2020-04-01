@@ -30,16 +30,36 @@
 
   <h1 class="titApp">Pa' decite</h1>
   <main class="secFormulario">
-    <div id=”emailRegister”>
-      <input type=”email” placeholder=”email” id=”userEmail” class=”textArea” maxlength=”40" size=”18" />
-      <input type=”password” placeholder=”password” maxlength=”10" size=”18" id=”userPassword” class=”textArea” />
-    </div>
-    <div id=”buttonsRegister”>
-      <button onclick="googleSignin()">Google Signin</button>
-      <button onclick="googleSignout()">Google Signout</button>
-      <button id=”loginEmail”>LOGIN</button>
-      <button id=”signUpEmail”>SIGN UP</button>
-      <button id=”logOut”>LOG OUT</button>
+
+    <div class="container"id=”emailRegister”>
+
+      <label for="email"><b>Email</b></label>
+      <input type="text" placeholder="Email" name="email" id=”userEmail” class=”textArea” required>
+
+      <label for="psw"><b>Password</b></label>
+      <input type="password" placeholder="Password" id=”userPassword” name="psw" class=”textArea” required>
+  </div>
+
+      <hr>
+      <div id=”buttonsRegister”>
+
+
+<div class="logIn">
+  <button onclick="googleSignin()" type="submit" class=" btn googleBtn" id="">
+    <img src="./images/google.png" alt="google" id="iconGoog"> Google Signin</button>
+
+<button id=”loginEmail” type="submit" class="btn btn-login">LOGIN</button>
+</div>
+
+
+
+
+<button id=”signUpEmail” type="submit" class="btn btn-register">SING UP</button>
+
+
+      <button onclick="googleSignout()" type="submit" class="btn">Google Signout</button>
+
+      <button id=”logOut” type="submit" class="btn">LOGOUT</button>
     </div>
   </main>
 
@@ -69,6 +89,9 @@
     </ul>
 
   </section>
+
+
+
 
   <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
 
