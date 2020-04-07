@@ -15,6 +15,11 @@ var firebaseConfig = {
   var chatUl = document.getElementById('chatUl');
   
   
+  $("#header").show();
+  $("#secFormulario").show();
+  $("#chat").hide();
+$("detallesPerfil").hide();
+
 
   $(function () {
     var user = firebase.auth().currentUser;
@@ -29,6 +34,10 @@ var firebaseConfig = {
       // this value to authenticate with your backend server, if
       // you have one. Use User.getToken() instead.
       console.log(name);
+
+
+
+
   }else if (user == null) {
       console.log("no hay nadie logueado");
   };
@@ -41,6 +50,8 @@ var firebaseConfig = {
 
         var elem = e.val();
         var nombre = elem.name;
+
+ 
         // console.log(elem);
 
         var mensaje = elem.message;
@@ -98,6 +109,19 @@ function  googleSignin() {
         console.log(token)
         console.log(user)
         console.log(user.displayName + "esta logueado")
+        console.log(user.email)
+        console.log(user.photoURL)
+
+        alert("Bienvenido " + user.displayName)
+
+
+	//********* Perfil 
+  document.getElementById("nombrePerfil").innerHTML = user.displayName;
+  $('#fotoPerfil').append("<img src='" + user.photoURL + "'/>");
+  $("#chat").show();
+  $("detallesPerfil").show();
+
+
         
   
       }).catch(function (error) {
@@ -107,8 +131,11 @@ function  googleSignin() {
         console.log(error.code)
         console.log(error.message)
       });
+
+   
   }
   
+
   
   function googleSignout() {
     firebase.auth().signOut()
