@@ -20,113 +20,129 @@ Mostaza clara: edd97a - RGB 237,217,122
 */
 
 
-html{
- background: rgb(2,0,36);
-background: radial-gradient(circle, rgba(2,0,36,1) 0%, rgba(0,212,255,1) 0%, rgba(0,0,0,1) 100%);
-background-repeat: no-repeat;
-background-size: 100%;
-font-family: Roboto, Helvetica, Arial, sans-serif;
+html {
+  background: rgb(2, 0, 36);
+  background: radial-gradient(circle, rgba(2, 0, 36, 1) 0%, rgba(0, 212, 255, 1) 0%, rgba(0, 0, 0, 1) 100%);
+  background-repeat: no-repeat;
+  background-size: 100%;
+  font-family: Roboto, Helvetica, Arial, sans-serif;
 }
 
 
 body {
-    color: rgba(0, 0, 0, 0.87);
-  }
+  color: rgba(0, 0, 0, 0.87);
+}
 
-  #message {
-    background: white;
-    max-width: 360px;
-    margin: 100px auto 16px;
-    padding: 32px 24px;
-    border-radius: 3px;
-  }
+#message {
+  background: white;
+  max-width: 360px;
+  margin: 100px auto 16px;
+  padding: 32px 24px;
+  border-radius: 3px;
+}
 
-  #message h2 {
-    color: #ffa100;
-    font-weight: bold;
-    font-size: 16px;
-    margin: 0 0 8px;
-  }
+#message h2 {
+  color: #ffa100;
+  font-weight: bold;
+  font-size: 16px;
+  margin: 0 0 8px;
+}
 
-  #message h1 {
-    font-size: 22px;
-    font-weight: 300;
-    color: rgba(0, 0, 0, 0.6);
-    margin: 0 0 16px;
-  }
+#message h1 {
+  font-size: 22px;
+  font-weight: 300;
+  color: rgba(0, 0, 0, 0.6);
+  margin: 0 0 16px;
+}
 
-  #message p {
-    line-height: 140%;
-    margin: 16px 0 24px;
-    font-size: 14px;
-  }
+#message p {
+  line-height: 140%;
+  margin: 16px 0 24px;
+  font-size: 14px;
+}
 
-  #message a {
-    display: block;
-    text-align: center;
-    background: #039be5;
-    text-transform: uppercase;
-    text-decoration: none;
-    color: white;
-    padding: 16px;
-    border-radius: 4px;
-  }
+#message a {
+  display: block;
+  text-align: center;
+  background: #039be5;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: white;
+  padding: 16px;
+  border-radius: 4px;
+}
 
-  #message,
-  #message a {
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-  }
+#message,
+#message a {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
 
-  #load {
-    color: rgba(0, 0, 0, 0.4);
-    text-align: center;
-    font-size: 13px;
-  }
-
-
+#load {
+  color: rgba(0, 0, 0, 0.4);
+  text-align: center;
+  font-size: 13px;
+}
 
 
 
-  /*/PRUEBA DISEÑO/*/
 
-  .titApp{
-    color: #fdfdfd;
-    text-align: center;
-  }
 
-  .iconPersons{
-    margin-top: 1%;
-    align-items: center;
-    width: 10%;
-    height: 10%;
-    margin-left: 45%;
-  }
+/*/PRUEBA DISEÑO/*/
 
-.secFormulario{
-margin-left: 30%;
-margin-right: 30%;
-padding: 1.5rem;
+.titApp {
+  color: #fdfdfd;
+  text-align: center;
+}
 
+.iconPersons {
+  margin-top: 1%;
+  align-items: center;
+  width: 10%;
+  height: 10%;
+  /*  */
+  margin-left: 45%;
+}
+
+.secFormulario {
+  margin-left: 30%;
+  margin-right: 30%;
+  padding: 1.5rem;
   border-radius: 48px 48px 48px 48px;
   -moz-border-radius: 48px 48px 48px 48px;
   -webkit-border-radius: 48px 48px 48px 48px;
   border: 4px solid #fdfdfd;
 }
 
-#chat{
+#chat {
   margin-left: 40%;
-margin-right: 40%;
+  margin-right: 40%;
+}
+
+#sinLoguear, #logueado{
+  text-align: center;
+  color: white;
 }
 
 
 
 input[type=text] {
   width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
+  /* padding: 12px 20px;
+  margin: 8px 0; */
   box-sizing: border-box;
 }
 
+#nombre, #mensaje {
+  height: 5em;
+  width: 20em;
+ 
+}
+
+#chat {
+  width: 11em;
+  padding: 0px 0px 0px 0px ;
+  margin: 0px 0px 0px 0px ;
+}
 
 
 * {
@@ -139,7 +155,8 @@ input[type=text] {
 }
 
 /* Full-width input fields */
-input[type=text], input[type=password] {
+input[type=text],
+input[type=password] {
   width: 100%;
   padding: 15px;
   margin: 5px 0 22px 0;
@@ -148,7 +165,8 @@ input[type=text], input[type=password] {
   background: #f1f1f1;
 }
 
-input[type=text]:focus, input[type=password]:focus {
+input[type=text]:focus,
+input[type=password]:focus {
   background-color: rgb(146, 157, 255);
   outline: none;
 }
@@ -176,41 +194,42 @@ hr {
   opacity: 1;
 }
 
-.btn-login{
+.btn-login {
   color: #fdfdfd;
-  background-color:rgb(1, 95, 119);
-  -webkit-box-shadow: 4px 2px 10px 2px rgba(0,0,0,0.44);
--moz-box-shadow: 4px 2px 10px 2px rgba(0,0,0,0.44);
-box-shadow: 4px 2px 10px 2px rgba(0,0,0,0.44);
+  background-color: rgb(1, 95, 119);
+  -webkit-box-shadow: 4px 2px 10px 2px rgba(0, 0, 0, 0.44);
+  -moz-box-shadow: 4px 2px 10px 2px rgba(0, 0, 0, 0.44);
+  box-shadow: 4px 2px 10px 2px rgba(0, 0, 0, 0.44);
 }
 
 
-.googleBtn, .btn-login{
+.googleBtn,
+.btn-login {
   padding: 4px 6px !important;
 }
 
- .btn-register{
+.btn-register {
   color: #fdfdfd;
-  background-color:rgb(39,40,86);
-  -webkit-box-shadow: 4px 2px 10px 2px rgba(0,0,0,0.44);
--moz-box-shadow: 4px 2px 10px 2px rgba(0,0,0,0.44);
-box-shadow: 4px 2px 10px 2px rgba(0,0,0,0.44);
+  background-color: rgb(39, 40, 86);
+  -webkit-box-shadow: 4px 2px 10px 2px rgba(0, 0, 0, 0.44);
+  -moz-box-shadow: 4px 2px 10px 2px rgba(0, 0, 0, 0.44);
+  box-shadow: 4px 2px 10px 2px rgba(0, 0, 0, 0.44);
 }
 
 
 
-#iconGoog{
+#iconGoog {
   width: 16%;
   height: 16%;
 }
 
 
 
-.logIn{
+.logIn {
   display: flex;
 }
 
-.logIn > button {
+.logIn>button {
   margin: 5px;
 }
 

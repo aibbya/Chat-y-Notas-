@@ -24,71 +24,52 @@
 <body>
 
 
-<div class="iconRed">
-  <img src="./images/grupo.png" alt="grupo" class="iconPersons">
-</div>
-
-  <h1 class="titApp">Pa' decite</h1>
-  <main class="secFormulario">
-
-    <div class="container"id=”emailRegister”>
-
-      <label for="email"><b>Email</b></label>
-      <input type="text" placeholder="Email" name="email" id=”userEmail” class=”textArea” required>
-
-      <label for="psw"><b>Password</b></label>
-      <input type="password" placeholder="Password" id=”userPassword” name="psw" class=”textArea” required>
+  <div class="iconRed">
+    <img src="./images/grupo.png" alt="grupo" class="iconPersons">
   </div>
 
-      <hr>
-      <div id=”buttonsRegister”>
+  <h1 class="titApp">Pa' decite algo...</h1>
+  <p id="sinLoguear">Logueate para enviarnos mensajes</p>
+  <p id="logueado" style="display: none;">Hola tu, dejá tu mensaje</p>
+  <main class="secFormulario" id="sectionLogueo">
 
+    
+    <section id="btnsLoginLogout">
+      
+      <div class="logIn">
+        <button id="entra" onclick="googleSignin()" type="submit" class=" btn googleBtn">
+          <img src="./images/google.png" alt="google" id="iconGoog"> Google Signin</button>
 
-<div class="logIn">
-  <button onclick="googleSignin()" type="submit" class=" btn googleBtn" id="">
-    <img src="./images/google.png" alt="google" id="iconGoog"> Google Signin</button>
+        
+      <button id="sale"  onclick="googleSignout()" type="submit" class="btn">Signout</button>
 
-<button id=”loginEmail” type="submit" class="btn btn-login">LOGIN</button>
-</div>
-
-
-
-
-<button id=”signUpEmail” type="submit" class="btn btn-register">SING UP</button>
-
-
-      <button onclick="googleSignout()" type="submit" class="btn">Google Signout</button>
-
-      <button id=”logOut” type="submit" class="btn">LOGOUT</button>
-    </div>
+      </div>
+    </section>
   </main>
 
-  <section id="chat" style="margin-top: 20px;">
-
-    <form action="">
-      <div>
-        <label for="nombre"> nombre </label>
-        <input type="text" id="nombre">
-
+  <main class="secFormulario" id="sectionMensajes" style="display: none;">
+    <section id="chat">
+  
+      <form action="">
+        <!-- <div>
+          <label for="nombre"> Nombre </label>
+          <input type="text" id="nombre">
+  
+        </div> -->
+        <div>
+          <label for="mensaje">Mensaje</label>
+          <textarea id="mensaje"></textarea>
+        </div>
+        <button type="button" id="btnEnviar">Enviar</button>
+      </form>
+  
+      <div id="mensajes">
+        <ul id="chatUl">
+        </ul>
       </div>
-      <div>
-        <label for="mensaje">Mensaje</label>
-        <textarea id="mensaje"></textarea>
-      </div>
-      <button type="button" id="btnEnviar">Enviar</button>
-    </form>
-
-    <ul id="chatUl">
-      <li>
-        <b>Nombre:</b>mensaje
-      </li>
-      <li>
-        <b>Nombre:</b> Mensaje
-
-      </li>
-    </ul>
-
-  </section>
+  
+    </section>
+  </main>
 
   <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
 
@@ -98,7 +79,7 @@
   <!-- TODO: Add SDKs for Firebase products that you want to use
             https://firebase.google.com/docs/web/setup#available-libraries -->
 
-    
+
   <script src="otroMain.js"></script>
 </body>
 
