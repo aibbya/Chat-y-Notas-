@@ -81,13 +81,13 @@ input[type=text] {
 }
 
 #nombre, #mensaje {
-  height: 5em;
-  width: 20em;
+  height: 10%;
+  width: 98%;
  
 }
 
 #chat {
-  width: 11em;
+  
   padding: 0px 0px 0px 0px ;
   margin: 0px 0px 0px 0px ;
 }
