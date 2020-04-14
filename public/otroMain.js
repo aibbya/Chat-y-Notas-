@@ -121,6 +121,8 @@ function googleSignout() {
       console.log('Signout Succesfull');
       document.getElementById("sectionMensajes").style.display = "none"
       document.getElementById("entra").style.display = "block"
+      mensajeAlUserNOlog.style.display = "block"
+      mensajeAlUserLog.style.display = "none"
 
     }, function (error) {
       console.log('Signout Failed')
