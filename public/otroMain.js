@@ -1,11 +1,11 @@
 var firebaseConfig = {
-  apiKey: "AIzaSyBfvV20K1vlElSTjI0i8e6wc5tgiXYHtMk",
-  authDomain: "revistacienciashoy.firebaseapp.com",
-  databaseURL: "https://revistacienciashoy.firebaseio.com",
-  projectId: "revistacienciashoy",
-  storageBucket: "revistacienciashoy.appspot.com",
-  messagingSenderId: "69878471982",
-  appId: "1:69878471982:web:3393e4864b1c65eea7aebf"
+  apiKey: "AIzaSyDqaJZmdY8OKfecF4y-SF6yMfmLvEbs7zk",
+  authDomain: "practicafireaa.firebaseapp.com",
+  databaseURL: "https://practicafireaa.firebaseio.com",
+  projectId: "practicafireaa",
+  storageBucket: "practicafireaa.appspot.com",
+  messagingSenderId: "974645987476",
+  appId: "1:974645987476:web:ac05383e3f34192b794c81"
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
